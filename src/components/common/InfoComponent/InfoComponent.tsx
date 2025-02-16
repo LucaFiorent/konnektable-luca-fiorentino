@@ -13,9 +13,9 @@ const InfoComponent: FC<InfoComponentP> = ({
 }) => {
   return (
     <div>
-      <div className="flex flex-col items-center mt-20 bg-blue-300 dark:bg-gray-800 py-10 sm:py-10 lg:py-20 px-10 sm:px-10 lg:px-20 rounded-4xl">
-        <div className="flex flex-col items-center text-center mb-8 sm:10 gap-5 sm:gap-6 ">
-          <h2 className="font-semibold text-xl sm:text-xl md:text-2xl lg:text-2xl uppercase">
+      <div className="flex flex-col items-center mt-5 bg-blue-300 dark:bg-gray-800 py-8 sm:py-8 lg:py-10 px-8 sm:px-8 lg:px-10 rounded-4xl">
+        <div className="flex flex-col items-center text-center mb-3 sm:mb-5 gap-3 sm:gap-4 ">
+          <h2 className="w-xs font-semibold text-xl sm:text-xl md:text-lg lg:text-xl uppercase">
             {title}
           </h2>
           <p className="w-40 text-md lg:text-lg">{message}</p>

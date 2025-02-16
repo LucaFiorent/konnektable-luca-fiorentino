@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export interface ErrorT {
   message: string;
   status: number;
-  originalError: AxiosError;
+  originalError: AxiosError | null;
 }
 
 interface ErrorComponentP {
@@ -21,16 +21,18 @@ const ErrorComponent: FC<ErrorComponentP> = ({ errorTitle, error }) => {
   if (!error) return null;
   return (
     <div className="flex items-start justify-center text-white">
-      <div className="flex flex-col items-center justify-center text-center w-sm sm:w-sm md:w-md lg:w-md mx-auto my-20 p-20 bg-red-500/60 rounded-4xl">
+      <div className="flex flex-col items-center justify-center text-center w-sm sm:w-sm lg:w-md mx-auto my-5 p-15 bg-red-500/60 rounded-4xl">
         <div className="mb-4">
           <LuTriangleAlert size={50} />
         </div>
-        <h2 className="text-xl uppercase mb-2 ">{errorTitle}</h2>
-        <p className="text-xl">{error.message}</p>
-        <div className="mt-10">
-          <Button onClickHandler={() => navigate("/")} error={true}>
-            Back Home
-          </Button>
+        <h2 className="text-lg uppercase mb-2 ">{errorTitle}</h2>
+        <p className="text-sm">{error.message}</p>
+        <div className="mt-5">
+          {error.status !== 0 && (
+            <Button onClickHandler={() => navigate("/")} error={true}>
+              Back Home
+            </Button>
+          )}
         </div>
       </div>
     </div>

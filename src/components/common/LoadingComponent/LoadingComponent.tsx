@@ -5,7 +5,7 @@ const LoadingComponent = () => {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center max-w-md mx-auto py-10 sm:py-10 lg:py-20 px-10 sm:px-10 lg:px-20 bg-blue-300 dark:bg-gray-800 rounded-4xl">
+      <div className="flex flex-col justify-center items-center max-w-sm mx-auto py-5 sm:py-8 lg:py-15 px-5 sm:px-8 lg:px-15 bg-blue-300 dark:bg-gray-800 rounded-4xl">
         <div className="relative flex items-center overflow-hidden mb-10">
           {/* Wrapper for Pac-Man + dots */}
           <motion.div
@@ -61,7 +61,7 @@ const LoadingComponent = () => {
             ))}
           </div>
         </div>
-        <h3 className="text-3xl font-bold mt-4">Loading...</h3>
+        <h3 className="text-2xl font-bold mt-4">Loading...</h3>
       </div>
     </div>
   );

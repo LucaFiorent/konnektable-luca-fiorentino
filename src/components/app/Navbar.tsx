@@ -34,11 +34,11 @@ const Navbar: FC = () => {
 
   return (
     <nav
-      className={`flex flex-col items-center w-auto sm:w-md md:w-xl lg:w-4xl uppercase mx-auto `}
+      className={`flex flex-col items-center w-auto sm:w-md md:w-lg lg:w-4xl uppercase mx-auto `}
     >
       <div
-        className={`flex items-center w-full gap-2 p-4 mb-10 shadow-mg rounded-full
-        lg:text-xl text-md  sm:gap-4 md:gap-6 lg:gap-6 bg-blue-200 dark:bg-gray-800 ${
+        className={`flex items-center w-full gap-2 p-2 mb-5 shadow-mg rounded-full
+        lg:text-xl text-md sm:gap-2 md:gap-4 lg:gap-4 bg-blue-200 dark:bg-gray-800 ${
           location.pathname !== "/" ? "justify-between" : "justify-center"
         }`}
       >
@@ -73,15 +73,15 @@ const Navbar: FC = () => {
             <div
               className={`flex items-center ${
                 location.pathname !== "/" && "justify-self-end"
-              } gap-4 relative z-10`}
+              } gap-2 relative z-10`}
             >
               <motion.div
                 whileHover={{
-                  scale: 1.5,
+                  scale: 1.3,
                   boxShadow: "0px 1px 6px rgba(0,0,0,0.3)",
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="w-10 h10 rounded-full z-10"
+                className="w-10 h-10 rounded-full z-10"
               >
                 <img
                   className="rounded-full"
@@ -95,10 +95,10 @@ const Navbar: FC = () => {
         <ThemeToggle />
       </div>
       {width < 1024 && (
-        <div className="flex mb-10 w-full h-15 rounded-full z-99">
+        <div className="flex mb-5 w-full h-15 rounded-full z-99">
           <div className="flex items-center flex-grow h-15 p-4 rounded-full">
             <div className="flex flex-grow items-center justify-center">
-              <motion.div className="absolute bg-blue-200 dark:bg-gray-800 mx-auto h-15 w-15 rounded-full" />
+              <motion.div className="absolute bg-blue-200 dark:bg-gray-800 mx-auto h-13 w-13 rounded-full" />
               <SearchDropdown
                 bgColor="bg-blue-200 dark:bg-gray-800"
                 txtColor="text-blue-600 dark:text-white"

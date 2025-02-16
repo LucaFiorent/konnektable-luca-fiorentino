@@ -11,8 +11,8 @@ interface UserElementP {
 const UserElement: FC<UserElementP> = ({ user, onClick, size = "large" }) => {
   const setGap =
     size === "small"
-      ? "gap-3 sm:gap-4 md:gap-5 lg:gap-6 w-48"
-      : "gap-5 sm:gap-6 md:gap-7 lg:gap-8";
+      ? "gap-3 sm:gap-4 md:gap-5 lg:gap-2 w-48"
+      : "gap-3 sm:gap-4 md:gap-5 lg:gap-6";
 
   return (
     <button
@@ -21,8 +21,8 @@ const UserElement: FC<UserElementP> = ({ user, onClick, size = "large" }) => {
     >
       <div className={`flex items-center ${setGap}`}>
         <div
-          className={`flex items-start justify-start ${
-            size === "small" ? "w-10 h-10" : "w-20 h-20"
+          className={`flex items-start justify-start  ${
+            size === "small" ? "w-10 h-10" : "w-15 h-15"
           }`}
         >
           {!user.avatar_url ? (
@@ -33,7 +33,7 @@ const UserElement: FC<UserElementP> = ({ user, onClick, size = "large" }) => {
             />
           ) : (
             <img
-              className="rounded-full items-center"
+              className="rounded-full items-center "
               src={user.avatar_url}
               alt={`${user.login}`}
             />
@@ -43,7 +43,7 @@ const UserElement: FC<UserElementP> = ({ user, onClick, size = "large" }) => {
           {user.login}
         </p>
       </div>
-      <LuEye size={26} />
+      <LuEye size={22} />
     </button>
   );
 };

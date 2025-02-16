@@ -22,10 +22,10 @@ const Button = ({
   //  - "plain && !error": A text based button
   const typeOfButton =
     !plain && error
-      ? "px-10 py-5 bg-red-500 hover:bg-red-800 text-white rounded-full text-md lg:text-lg"
+      ? "px-6 py-4 bg-red-500 hover:bg-red-800 text-white rounded-full text-sm lg:text-md"
       : !plain && !error
-      ? "px-10 py-5 rounded-full text-white text-md lg:text-lg bg-blue-600 hover:bg-blue-800 dark:bg-purple-700 hover:bg-purple-800"
-      : "text-blue-600 dark:text-white text-xl";
+      ? "px-10 py-5 rounded-full text-white text-sm lg:text-md bg-blue-600 hover:bg-blue-800 dark:bg-purple-700 hover:bg-purple-800"
+      : "text-blue-600 dark:text-white text-lg";
 
   return (
     <button
@@ -35,7 +35,7 @@ const Button = ({
       onClick={onClickHandler}
     >
       <motion.div
-        className="flex items-center gap-3"
+        className="flex items-center gap-2"
         whileHover={{ scale: 1.1 }}
       >
         {children}

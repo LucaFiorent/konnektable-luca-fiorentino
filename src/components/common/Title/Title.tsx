@@ -16,13 +16,13 @@ const Title = ({
   return (
     <div
       className={`flex items-center w-full gap-4 ${txtColor} ${
-        spaceDown ? "mb-10" : ""
+        spaceDown ? "mb-5" : ""
       }`}
     >
       <div className="w-12 h-12">
         <img className="rounded-full" src={imgUrl} alt={imgInfoText} />
       </div>
-      <div className="flex gap-2 font-semibold text-2xl">{children}</div>
+      <div className="flex gap-2 font-semibold text-xl">{children}</div>
     </div>
   );
 };

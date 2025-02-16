@@ -25,7 +25,7 @@ const Pagination: FC<PaginationP> = ({
           }}
           disabled={activePage <= 1}
         >
-          <LuCircleArrowLeft size={32} />
+          <LuCircleArrowLeft size={28} />
         </button>
       </div>
       {Array.from({ length: totalPages }, (_, index) => index + 1)
@@ -63,7 +63,7 @@ const Pagination: FC<PaginationP> = ({
           }}
           disabled={activePage >= totalPages}
         >
-          <LuCircleArrowRight size={32} />
+          <LuCircleArrowRight size={28} />
         </button>
       </div>
     </div>

@@ -29,7 +29,7 @@ const Sort: FC<SortP> = ({ active, sortOptions, onClick }) => {
           whileHover={{ scale: 1.1 }}
         >
           <span>Sort</span>
-          <LuChevronsUpDown size={26} />
+          <LuChevronsUpDown size={22} />
         </motion.div>
       </button>
       {isOpen && (
@@ -38,12 +38,15 @@ const Sort: FC<SortP> = ({ active, sortOptions, onClick }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
-          className={`absolute flex flex-col items-end gap-4 px-6 pt-15 pb-6 shadow-lg border -top-1 -right-1 min-w-[200px] rounded-4xl bg-blue-300 dark:bg-gray-800`}
+          className={`absolute flex flex-col items-end gap-4 px-4 pt-15 pb-4 shadow-lg border text-sm -top-1 -right-1 min-w-[180px] rounded-4xl bg-blue-300 dark:bg-gray-800`}
         >
           {sortOptions.map((option) => (
             <motion.button
               key={option.id}
-              onClick={() => onClick(option)}
+              onClick={() => {
+                onClick(option);
+                setIsOpen(!isOpen);
+              }}
               disabled={active.id !== 0 && option.id === 0 && true}
               whileHover={{ scale: 1.1 }}
               className={`${
@@ -55,7 +58,6 @@ const Sort: FC<SortP> = ({ active, sortOptions, onClick }) => {
                 "text-blue-800 dark:text-yellow-400 font-bold"
               }`}
             >
-              {<>{console.log(active.id)}</>}
               <span>{option.text}</span>
               {option.id !== 0 && (
                 <LuStar

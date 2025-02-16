@@ -103,12 +103,14 @@ const Repositories = () => {
           </div>
         )}
       </div>
-      <Pagination
-        totalPages={totalPages}
-        onChange={setCurrentPage}
-        activePage={currentPage}
-        inactive={isReposLoading}
-      />
+      {totalPages === 0 && (
+        <Pagination
+          totalPages={totalPages}
+          onChange={setCurrentPage}
+          activePage={currentPage}
+          inactive={isReposLoading}
+        />
+      )}
     </div>
   );
 };

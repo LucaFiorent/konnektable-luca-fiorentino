@@ -92,7 +92,7 @@ const Followers: FC = () => {
           {isLoading ? (
             <LoadingComponent />
           ) : (
-            <div className="flex flex-col flex-grow w-auto sm:w-md md:w-lg lg:w-3xl gap-4 w-full">
+            <div className="flex flex-col flex-grow w-auto sm:w-md md:w-lg lg:w-3xl gap-4">
               {data.map((follower: Follower) => {
                 return (
                   <UserElement
@@ -106,12 +106,14 @@ const Followers: FC = () => {
             </div>
           )}
         </div>
-        <Pagination
-          totalPages={totalPages}
-          onChange={setCurrentPage}
-          activePage={currentPage}
-          inactive={isLoading}
-        />
+        {totalPages === 0 && (
+          <Pagination
+            totalPages={totalPages}
+            onChange={setCurrentPage}
+            activePage={currentPage}
+            inactive={isLoading}
+          />
+        )}
       </div>
     </div>
   );

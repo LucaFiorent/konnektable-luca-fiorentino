@@ -75,7 +75,7 @@ const SearchInput: FC<SearchInputP> = ({
           </motion.div>
         )}
         <button className="cursor-pointer" onClick={handleOpenSearch}>
-          <LuSearch size={26} />
+          <LuSearch size={24} />
         </button>
       </AnimatePresence>
     </div>
