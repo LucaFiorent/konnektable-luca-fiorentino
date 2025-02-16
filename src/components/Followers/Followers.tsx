@@ -106,7 +106,7 @@ const Followers: FC = () => {
             </div>
           )}
         </div>
-        {totalPages === 0 && (
+        {totalPages !== 0 && (
           <Pagination
             totalPages={totalPages}
             onChange={setCurrentPage}
