@@ -38,7 +38,7 @@ const Repositories = () => {
     isLoading: isReposLoading,
     isError: isReposError,
     error: isReposErrorObject,
-  }: useGetUserReposT = useGetUserRepos(safeUsername, currentPage, sortOption);
+  }: useGetUserReposT = useGetUserRepos(safeUsername, currentPage);
 
   // fetch next page of repositories
   useEffect(() => {
@@ -46,7 +46,7 @@ const Repositories = () => {
       const nextPage = currentPage + 1;
       queryClient.prefetchQuery({
         queryKey: ["repos", username, nextPage, sortOption],
-        queryFn: () => getUserRepos(username, nextPage, sortOption),
+        queryFn: () => getUserRepos(username, nextPage),
       });
     }
   }, [currentPage, username, totalPages, sortOption]);

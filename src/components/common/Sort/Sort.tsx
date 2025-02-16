@@ -1,4 +1,4 @@
-import { act, FC, useState } from "react";
+import { FC, useState } from "react";
 import { motion } from "framer-motion";
 import { LuChevronsUpDown, LuStar } from "react-icons/lu";
 import { optionsT } from "@/types/types";
